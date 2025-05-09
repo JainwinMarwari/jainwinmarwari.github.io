@@ -7,15 +7,104 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7fa; color: #333; }
-    header, footer { background-color: #1e2a38; color: white; padding: 1rem 2rem; }
-    header h1 { color: #4ECDC4; } /* Changed heading color to gold */
-    nav a { color: white; margin: 0 1rem; text-decoration: none; }
-    .hero { background: #2f3e4d; color: white; padding: 4rem 2rem; text-align: center; }
-    .section { padding: 3rem 2rem; }
-    .section h2 { color: #2f3e4d; }
-    .button { background: #0077cc; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .card { background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); padding: 1.5rem; }
+    header, footer { 
+      background-color: #1e2a38; 
+      color: white; 
+      padding: 1rem 2rem;
+      position: relative;
+    }
+    header h1 { 
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+    nav { 
+      display: flex;
+      gap: 1.5rem;
+      padding: 1rem 0;
+    }
+    nav a { 
+      color: white; 
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    nav a:hover {
+      color: #FFD700;
+      background: rgba(255, 215, 0, 0.1);
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: #FFD700;
+      transition: all 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    .active {
+      color: #FFD700 !important;
+      font-weight: 600;
+    }
+    .hero { 
+      background: #2f3e4d; 
+      color: white; 
+      padding: 4rem 2rem; 
+      text-align: center; 
+    }
+    .section { 
+      padding: 3rem 2rem;
+      scroll-margin-top: 80px;
+    }
+    .section h2 { 
+      color: #2f3e4d;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #FFD700;
+    }
+    .button { 
+      background: #0077cc; 
+      color: white; 
+      padding: 0.5rem 1rem; 
+      text-decoration: none; 
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,119,204,0.3);
+    }
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 2rem; 
+    }
+    .card { 
+      background: white; 
+      border-radius: 8px; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.05); 
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -30,6 +119,50 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
+
+  <!-- Rest of your existing body content remains the same -->
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Active link highlighting
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('nav a');
+      
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          const id = section.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    });
+
+    // Card hover effect enhancement
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(-5px)';
+      });
+    });
+  </script>
+</body>
+</html>
 
   <section class="hero">
     <h2>Welcome to Jainwin Marwari</h2>

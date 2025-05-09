@@ -7,49 +7,53 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     :root {
-      --primary-accent: #2962FF;  /* Professional Royal Blue */
-      --secondary-accent: #1A237E; /* Deep Navy */
-      --hover-accent: #304FFE;     /* Interactive Blue */
+      --primary-accent: #5C8374;   /* Soothing Sage Green */
+      --secondary-accent: #1B4242; /* Deep Teal */
+      --text-dark: #1e2a38;        /* Navy Text */
+      --text-light: #f4f7fa;       /* Light Background */
     }
 
     body { 
       font-family: 'Segoe UI', sans-serif; 
       margin: 0; 
-      background-color: #f4f7fa; 
-      color: #333; 
+      background-color: var(--text-light); 
+      color: var(--text-dark); 
+      line-height: 1.6;
     }
     
     header, footer { 
       background-color: #1e2a38; 
-      color: white; 
-      padding: 1rem 2rem;
+      color: var(--text-light); 
+      padding: 1.5rem 2rem;
       position: relative;
     }
     
     header h1 { 
       color: var(--primary-accent);
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
       letter-spacing: -0.5px;
     }
     
     nav { 
       display: flex;
-      gap: 1.5rem;
-      padding: 1rem 0;
+      gap: 1.8rem;
+      padding: 1.2rem 0;
     }
     
     nav a { 
       color: rgba(255,255,255,0.9); 
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 4px;
       transition: all 0.3s ease;
       position: relative;
+      font-weight: 500;
     }
     
     nav a:hover {
       color: var(--primary-accent);
-      background: rgba(41, 98, 255, 0.1);
+      background: rgba(92, 131, 116, 0.1);
     }
     
     nav a::after {
@@ -75,21 +79,22 @@
     
     .hero { 
       background: #2f3e4d; 
-      color: white; 
-      padding: 4rem 2rem; 
+      color: var(--text-light); 
+      padding: 5rem 2rem; 
       text-align: center; 
     }
     
     .section { 
-      padding: 3rem 2rem;
+      padding: 4rem 2rem;
       scroll-margin-top: 80px;
     }
     
     .section h2 { 
-      color: #2f3e4d;
-      margin-bottom: 2rem;
+      color: var(--text-dark);
+      margin: 0 0 2.5rem 0;
       position: relative;
-      padding-bottom: 0.5rem;
+      padding-bottom: 1rem;
+      font-size: 2rem;
     }
     
     .section h2::after {
@@ -97,47 +102,76 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 60px;
+      width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+      background: linear-gradient(90deg, var(--primary-accent), transparent);
     }
     
     .button { 
-      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-      color: white; 
-      padding: 0.75rem 1.5rem; 
+      background: var(--primary-accent);
+      color: var(--text-light); 
+      padding: 0.9rem 2.2rem; 
       text-decoration: none; 
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      border: 2px solid transparent;
-      display: inline-block;
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 500;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     
     .button:hover {
-      background: linear-gradient(135deg, var(--hover-accent), var(--secondary-accent));
+      background: var(--secondary-accent);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(41, 98, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(27, 66, 66, 0.15);
     }
     
     .grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 2rem; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 2.5rem; 
     }
     
     .card { 
       background: white; 
-      border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.05); 
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 4px solid var(--primary-accent);
+      border-radius: 10px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
+      padding: 2rem;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      border-top: 4px solid var(--primary-accent);
     }
     
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(41, 98, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    .card h3 {
+      margin: 0 0 1rem 0;
+      color: var(--text-dark);
+      font-size: 1.3rem;
+    }
+    
+    .card p {
+      margin: 0 0 1.5rem 0;
+      color: #5a6d7d;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    
+    .card .button {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
@@ -153,47 +187,6 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const section = document.querySelector(this.getAttribute('href'));
-        section.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Active link highlighting
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('.section');
-      const navLinks = document.querySelectorAll('nav a');
-      
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          const id = section.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-          });
-        }
-      });
-    });
-
-    // Card hover effect enhancement
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-        const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-        card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(-5px)';
-      });
-    });
-  </script>
-</body>
-</html>
 
   <section class="hero">
     <h2>Welcome to Jainwin Marwari</h2>
@@ -257,11 +250,51 @@
   <section class="section" id="contact">
     <h2>Contact</h2>
     <p>If you're interested in our approach or want to connect, reach out via email.</p>
-    <p>Email: <a href="mailto:jainwinmarwari@gmail.com">jainwinmarwari@gmail.com</a></p>
+    <p>Email: <a href="mailto:jainwinmarwari@gmail.com" class="button">jainwinmarwari@gmail.com</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Jainwin Marwari. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('nav a');
+      const scrollPosition = window.scrollY + window.innerHeight/2;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
+          const id = section.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const xAxis = (card.offsetWidth/2 - (e.pageX - card.offsetLeft)) / 15;
+        const yAxis = (card.offsetHeight/2 - (e.pageY - card.offsetTop)) / 15;
+        card.style.transform = `perspective(1000px) rotateX(${yAxis}deg) rotateY(${-xAxis}deg)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(-5px)';
+      });
+    });
+  </script>
 </body>
 </html>

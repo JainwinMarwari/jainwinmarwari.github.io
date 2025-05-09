@@ -14,7 +14,7 @@
       position: relative;
     }
     header h1 { 
-      color: #FFD700;
+      color: #50C878; /* Emerald Green */
       margin-bottom: 0.5rem;
     }
     nav { 
@@ -31,8 +31,8 @@
       position: relative;
     }
     nav a:hover {
-      color: #FFD700;
-      background: rgba(255, 215, 0, 0.1);
+      color: #50C878;
+      background: rgba(80, 200, 120, 0.1);
     }
     nav a::after {
       content: '';
@@ -41,7 +41,7 @@
       height: 2px;
       bottom: 0;
       left: 50%;
-      background: #FFD700;
+      background: #50C878;
       transition: all 0.3s ease;
     }
     nav a:hover::after {
@@ -49,7 +49,7 @@
       left: 0;
     }
     .active {
-      color: #FFD700 !important;
+      color: #50C878 !important;
       font-weight: 600;
     }
     .hero { 
@@ -75,7 +75,7 @@
       left: 0;
       width: 60px;
       height: 3px;
-      background: #FFD700;
+      background: #50C878;
     }
     .button { 
       background: #0077cc; 
@@ -87,7 +87,7 @@
     }
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,119,204,0.3);
+      box-shadow: 0 5px 15px rgba(80, 200, 120, 0.3);
     }
     .grid { 
       display: grid; 
@@ -103,7 +103,7 @@
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 20px rgba(80, 200, 120, 0.1);
     }
   </style>
 </head>
@@ -119,9 +119,6 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
-  <!-- Rest of your existing body content remains the same -->
-
   <script>
     // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {

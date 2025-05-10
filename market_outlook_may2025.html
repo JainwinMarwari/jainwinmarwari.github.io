@@ -1,117 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Market Outlook - May 2025 | Jainwin Marwari</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Outlook: May 2025 | Jainwin Marwari</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f4f8fb;
-      margin: 0;
-      padding: 0;
+    /* Copy all CSS from main page */
+    :root {
+      --primary-accent: #2AA4A4;    /* Professional Teal */
+      --secondary-accent: #1B3A4B;  /* Deep Navy */
+      --text-dark: #2D3748;         /* Charcoal Gray */
+      --text-light: #F8FAFC;        /* Light Background */
     }
-    .container {
+
+    body { 
+      font-family: 'Segoe UI', sans-serif; 
+      margin: 0; 
+      background-color: var(--text-light); 
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    header { 
+      background-color: var(--secondary-accent); 
+      color: var(--text-light); 
+      padding: 1.5rem 2rem;
+    }
+    
+    header h1 { 
+      color: var(--primary-accent);
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+      letter-spacing: -0.5px;
+    }
+    
+    nav { 
+      display: flex;
+      gap: 1.8rem;
+      padding: 1.2rem 0;
+    }
+    
+    nav a { 
+      color: rgba(255,255,255,0.9); 
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 500;
+    }
+    
+    nav a:hover {
+      color: var(--primary-accent);
+      background: rgba(42, 164, 164, 0.1);
+    }
+    
+    .section { 
+      padding: 4rem 2rem;
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 20px;
     }
-    header {
-      background: #002b5c; /* navy */
-      color: white;
-      padding: 20px 0;
+    
+    .section h2 { 
+      color: var(--text-dark);
+      margin: 0 0 2rem 0;
+      position: relative;
+      padding-bottom: 1rem;
+      font-size: 1.8rem;
     }
-    header .container {
-      display: flex;
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: var(--primary-accent);
+    }
+    
+    .button { 
+      background: var(--primary-accent);
+      color: var(--text-light); 
+      padding: 0.9rem 2.2rem; 
+      text-decoration: none; 
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 2rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.5em;
+    
+    .button:hover {
+      background: #238787;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
+    
+    ul {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
     }
-    nav li {
-      margin-left: 20px;
+    
+    li {
+      margin-bottom: 1rem;
+      line-height: 1.6;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+    
+    strong {
+      color: var(--secondary-accent);
     }
-    nav a:hover {
-      color: #008080; /* teal accent */
-    }
-    main {
-      background: #ffffff;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    article h1 {
-      color: #002b5c; /* navy heading */
-    }
-    .meta {
-      color: #555;
-      font-size: 0.9em;
-    }
-    .back-link {
-      display: inline-block;
-      margin: 20px 0;
-      text-decoration: none;
-      color: #008080;
-    }
-    .back-link:hover {
-      text-decoration: underline;
-    }
+    
     footer {
-      background: #002b5c;
-      color: white;
       text-align: center;
-      padding: 10px 0;
-      margin-top: 40px;
-    }
-    footer p {
-      margin: 0;
-      font-size: 0.8em;
+      padding: 2rem;
+      background-color: var(--secondary-accent);
+      color: var(--text-light);
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Jainwin Marwari</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <h1>Jainwin Marwari</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <main class="container">
-    <article>
-      <h1>Market Outlook: May 2025</h1>
-      <p class="meta">May 1, 2025 • By John Doe</p>
-      <p>The stock market closed April on a high note, with the S&amp;P 500 reaching record levels. As we enter May 2025, investors are optimistic about continued economic growth and easing inflation pressures.</p>
-      <p>Key indicators such as employment numbers and consumer spending remain strong, suggesting that corporate earnings could continue to improve. Analysts are particularly bullish on the technology and healthcare sectors, citing robust innovation and demographic trends.</p>
-      <p>However, risks remain. Geopolitical tensions and potential Federal Reserve policy changes could introduce volatility. We recommend a diversified portfolio with a focus on quality companies that can weather market fluctuations.</p>
-    </article>
-    <p><a href="index.html" class="back-link">← Back to Home</a></p>
+
+  <main class="section">
+    <h2>Macro Trends Impacting Small Caps</h2>
+    <p>May 2025 brings a unique macroeconomic environment where small caps are gaining momentum. With inflation moderating and interest rate cuts on the horizon, capital is flowing back into growth-centric small cap names. Domestic consumption remains strong, aided by rural recovery and lower fuel prices.</p>
+
+    <p>At Jainwin Marwari, we’re focused on identifying fundamentally strong businesses that will benefit most from these cyclical tailwinds. In this piece, we’ll walk through a few sectors that excite us right now and share how we’re positioning for the next few quarters.</p>
+
+    <h3>Favorable Sectors</h3>
+    <ul>
+      <li><strong>Capital Goods</strong>: Strong order books driven by private capex.</li>
+      <li><strong>Consumer Discretionary</strong>: Rural consumption rebound.</li>
+      <li><strong>Financial Services</strong>: Well-capitalized NBFCs gaining share in Tier 2/3 cities.</li>
+    </ul>
+
+    <p>We continue to believe in bottom-up stock picking while keeping macro as a guide—not a driver. The goal is steady compounding, not chasing momentum.</p>
+
+    <a href="index.html" class="button">← Back to Home</a>
   </main>
+
   <footer>
-    <div class="container">
-      <p>© 2025 Jainwin Marwari. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 Jainwin Marwari. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
 </body>
 </html>

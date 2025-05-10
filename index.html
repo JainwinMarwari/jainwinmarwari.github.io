@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jainwin Marwari PMS</title>
-  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     :root {
-      --primary-accent: #5C8374;   /* Soothing Sage Green */
-      --secondary-accent: #1B4242; /* Deep Teal */
-      --text-dark: #1e2a38;        /* Navy Text */
-      --text-light: #f4f7fa;       /* Light Background */
+      --primary-accent: #2AA4A4;    /* Professional Teal */
+      --secondary-accent: #1B3A4B;  /* Deep Navy */
+      --text-dark: #2D3748;         /* Charcoal Gray */
+      --text-light: #F8FAFC;        /* Light Background */
     }
 
     body { 
       font-family: 'Segoe UI', sans-serif; 
       margin: 0; 
       background-color: var(--text-light); 
-      color: var(--text-dark); 
+      color: var(--text-dark);
       line-height: 1.6;
     }
     
     header, footer { 
-      background-color: #1e2a38; 
+      background-color: var(--secondary-accent); 
       color: var(--text-light); 
       padding: 1.5rem 2rem;
-      position: relative;
     }
     
     header h1 { 
@@ -53,7 +51,7 @@
     
     nav a:hover {
       color: var(--primary-accent);
-      background: rgba(92, 131, 116, 0.1);
+      background: rgba(42, 164, 164, 0.1);
     }
     
     nav a::after {
@@ -78,7 +76,7 @@
     }
     
     .hero { 
-      background: #2f3e4d; 
+      background: var(--secondary-accent); 
       color: var(--text-light); 
       padding: 5rem 2rem; 
       text-align: center; 
@@ -104,7 +102,7 @@
       left: 0;
       width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, var(--primary-accent), transparent);
+      background: var(--primary-accent);
     }
     
     .button { 
@@ -113,9 +111,8 @@
       padding: 0.9rem 2.2rem; 
       text-decoration: none; 
       border-radius: 6px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       font-weight: 500;
-      border: none;
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
@@ -123,9 +120,9 @@
     }
     
     .button:hover {
-      background: var(--secondary-accent);
+      background: #238787;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(27, 66, 66, 0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     
     .grid { 
@@ -140,9 +137,9 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.06); 
       padding: 2rem;
       transition: all 0.3s ease;
+      border-top: 4px solid var(--primary-accent);
       display: flex;
       flex-direction: column;
-      border-top: 4px solid var(--primary-accent);
     }
     
     .card:hover {
@@ -153,12 +150,11 @@
     .card h3 {
       margin: 0 0 1rem 0;
       color: var(--text-dark);
-      font-size: 1.3rem;
     }
     
     .card p {
       margin: 0 0 1.5rem 0;
-      color: #5a6d7d;
+      color: #4A5568;
       line-height: 1.6;
       flex-grow: 1;
     }
